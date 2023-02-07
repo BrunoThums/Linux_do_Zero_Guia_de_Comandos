@@ -1,7 +1,7 @@
 # Linux_do_Zero_Guia_de_Comandos
 DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comandos do curso e suas utilidades
 ---
-
+<details>
 <summary> Comandos essenciais </summary>
     - `comando --help` informa o que faz o comando e informa todos os argumentos utilizáveis, junto com suas funções
     x: `ls --help` 
@@ -10,6 +10,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `man clear`
     - `hystory` mostra o histórico de comandos (até 1000 comandos)
     - `!!` executa o último comando utilizado
+    <details>
 <summary> Navegação </summary>
     - `pwd` descubra o diretório em que você está
     - `cd` (change directory) muda o diretório
@@ -30,7 +31,10 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - `ls “expressão”?”expressão”` lista os diretórios e seus arquivos que iniciem com a expressão citada, que possuem uma outra letra ou número após a expressão, e contenham outra expressão na sequência. 
         x: `ls p*m` saída: `pam.d: atd chfn`
         Ou seja: traga todos os arquivos que se iniciem com p, tenham qualquer número ou letra no segundo index/elemento e tenham m na sequência
+    </details>
+    <details>
 <summary> Gerenciar arquivos e pastas </summary>
+        <details>
     - CRUD (create, read, update e delete)
         - `touch nomeDoArquivo.formato` cria um arquivo no diretório local 
         x: `touch arquivo.txt`
@@ -47,6 +51,8 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
             x: `rmdir contatos documentos` (é necessário estar na pasta superior, ou informar o caminho completo das pastas)
         - `rm -rf nomeDodiretório/nomeDaPasta` (recursive forced) exclui todas as subpastas e subarquivos do diretório/pasta informado
         x: `rm -rf documentos` (é necessário estar na pasta superior, ou informar o caminho completo da pasta/diretório)
+            </details>
+        <details>
     <summary> Copiar/Mover/Renomear/Procurar </summary>
         - `find -name expressão` procura, a partir do diretório atual, pelo nome do arquivo especificado
         x: `find -name arquivo.txt` ou `find -name arq*`
@@ -69,7 +75,11 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - Renomear um arquivo
             - `mv nomeDoArquivo.extensão nomeDesejado.extensão`
             x: `mv planilhas.xlsx planilha_investimento.xlsx`
+            </details>
+        </details>
+    <details>
 <summary> Gerenciar usuários e grupos <summary>
+    <details>
     <summary> Usuário </summary>
         - `cat /etc/passwd` mostra a listagem de serviços e usuários
         - `useradd nomeDoUsuario` adiciona um usuário
@@ -86,12 +96,17 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - `w` como root, lista os usuários, juntamente com IP, horário de login, tempo em espera (idle)
         - `who -a` lista os usuários e seus PIDs (processo de logon)
         - `kill pidUsuario` “derruba” a sessão de um usuário
+        </details>
+    <details>
     <summary> Grupo </summary>
         - `cat /etc/group` lista os grupos
         - `usermod -G grupo1, grupo2 nomeDoUsuario` adiciona o usuário aos 2 grupos mencionados, removendo-o de outros grupos anteriores (-G groups, para adicionar apenas a um grupo, use -g e o grupo desejado)
         x: `usermod -G adm, sudo mariana` adiciona a mariana ao grupo adm e sudo, removendo-a aos grupos anteriores
         - `gpasswd -d nomeDoUsuario nomeDoGrupo` remove o usuário do grupo citado (-d delete)
         x: `gpasswd -d mariana adm` remove a mariana do grupo “adm”
+        </details>
+    </details>
+    <details>
 <summary> Gerenciar scripts </summary>
     - Crie um arquivo executável `nano criar_user.sh`
     - Crie 4 usuários `useradd guest10`
@@ -123,9 +138,12 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `chmod +x criar_user.sh`
     - `./nomeDoArquivo.extensão` executa o arquivo desejado
     x: `./criar_user.sh`
+        </details>
+    <details>
 <summary> Permissões </summary>
     - `ls -l` lista todos os arquivos e pastas do diretório atual, incluindo as permissões, tamanho e data de criação
         - Na imagem abaixo tem-se, da esquerda pra direita:
+        <details>
             <summary> Permissões: `lrwxrwxrwx`</summary>
                 
                 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/487e096c-b64f-407b-998f-8e6c811fe3ad/Untitled.png)
@@ -138,16 +156,14 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
             - Tamanho em bytes
             - Data e hora criada
             - Nome do Arquivo/Diretório/Links
+            </details>
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16c6cc18-c2e2-4f7c-b547-c8d31e5767d1/Untitled.png)
         
     - `chown nomeDoUsuario:nomeDoGrupo /nomeDoDiretorio` troca o dono do diretório para o usuário e grupo citados (chown = change owner. Só é possível com sudo ou root)
     x: `chown debora:GRP_ADM /adm/`
     - `chown nomeDoUsuario:nomeDoGrupo arquivo.extensão` troca o dono do grupo para o usuário e grupo citados
     x: `chown root:GRP_ADM texto-adm.txt`
     - Nível de permissões: conforme a tabela abaixo, se você quer ter privilégio de Leitura (R) e Gravação (W), terá que informar o valor 6. Se quiser ter R W e X, valor 7. Apenas X? 1. W e X? 3. Nenhuma? 0.
-        
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e23524c7-8d52-4180-9a98-0f47e22f7fc8/Untitled.png)
         
     - Sigla `ndp`: nível de permissão (para ficar mais curto o código abaixo)
     - `chmod **ndpROOTndpGROUPndpOTHER** /diretorio` concede privilégios específicos para o root, grupo e outros para um diretório específico
@@ -158,7 +174,9 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `chmod +x criar_user.sh`
     - `chmod -x  nomeDoArquivo.extensão` remove a permissão de execução do arquivo para o dono
     x: `chmod -x criar_user.sh`
-- Gerenciar pacotes
+        </details>
+    <details>
+<summary> Gerenciar pacotes </summary>
     - `apt list installed` lista os aplicativos instalados na máquina
     - `apt list --upgradable` lista os aplicativos instalados que possuem atualização disponível
     - `apt search nomeDoAplicativo` procura aplicativos nos repositórios do ubuntu com o nome citado
@@ -173,8 +191,9 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `apt remove net-tools`
     - `apt update` faz o download da atualização dos pacotes do sistema
     - `apt upgrade` faz a instalação das atualizações dos pacotes do sistema
-    - 
-- Gerenciar discos
+    </details>
+    <details>
+<summary> Gerenciar discos </summary>
     - Particionar o disco
         - Escolha o disco desejado ( ex: `/dev/sdb` )
         - `fdisk caminhoDoDisco` abre o fdisk para o disco escolhido
@@ -201,7 +220,9 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     `nomeDodisco + localMontado + formatoDoSistemaDeArquivos + parâmetrosPadrões`
     x: `/dev/sdb /disk2 etx4 defaults 0 0` salve com CTRL+O Enter CTRL+X
     - Faça o reboot para confirmar as modificações
-- Gerenciar processos
+        </details>
+    <details>
+<summary> Gerenciar processos </summary>
     - `ps` lista os processos do usuário atual
         - `-a` parâmetro indicado para mostrar os processos de todos os usuários
         - `-u` parâmetro indicado para exibir o nome do usuário e horário de início do processo
@@ -210,7 +231,9 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `kill 12852`
     - `killall nomeDoAplicativo` elimina todos os processos de um determinado processo
     x: `killall chrome`
-- Desafio: Infraestrutura como Código (IaC)
+        </details>
+    <details>
+<summary> Desafio: Infraestrutura como Código (IaC) </summary>
     
     ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f47ed13d-e3a5-424c-bea3-a747b4effceb/Untitled.png)
     
@@ -332,94 +355,5 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     
     - `chmod +x  start_environment_pattern.sh`concede a permissão de execução do arquivo
     - `./start_environment_pattern.sh` executa o arquivo desejado
-    
-
-- Servidores
-    - São utilizados como: servidor de arquivos, servidor web e servidor de banco de dados.
-    - Servidor de arquivos
-        - É necessário instalar o samba (para manipular arquivos SMB, do Windows)
-        `apt install samba -y`
-        - Cria-se uma pasta publica
-        `mkdir publica`
-        - Com permissão total a todos
-        `chmod 777 publica`
-        - Abre-se o arquivo de configuração do samba
-        `nano /etc/samba/smb.conf`
-        - Vá até o final do arquivo e adicione as seguintes linhas
-        
-        ```bash
-        #[nomeDaPastaPublica/PastaParaSeCompartilhar]
-        [publica]
-        #path = diretórioDaPasta
-        path = /disk2/publica
-        writable = yes
-        #Definir para que qualquer pessoa tenha acesso à pasta
-        guest ok = yes
-        #Definir que todos que acessarem serão apenas convidados (guest)
-        guest only = yes
-        #CTRL+O enter CTRL+X
-        ```
-        
-        - O `systemctl` gerencia serviços em segundo plano. Neste caso vamos reiniciar o `smb` (samba). Termina em “d” pois ele é um `daemon` (serviço em segundo plano)
-        `systemctl restart` 
-        `systemctl restart smbd`
-        - Verifique se o processo está em execução
-        `systemctl status smbd`
-        - Para iniciar o processo, use
-        `systemctl enable smbd`
-        - Verifique o ip do samba
-        `ip a`
-        - Para acessar o samba pelo Windows, abra o explorador de arquivos, e onde mostra o diretório, digite o ip
-        `\\10.0.0.19\publica` e enter
-        - OBS: só é possível acessar a pasta as pessoas cadastradas na lista do servidor
-        `cat /etc/passwd`
-        - É possível acessar conectando-se a um local de rede
-            
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1b2da338-c739-4cf6-bd20-32d552af019b/Untitled.png)
-            
-    - Servidor Web
-        - Instale o apache2
-        `apt install apache2 -y`
-        - Verifique se ele já está em execução
-        `systemctl status apache2`
-        - Verifique o ip do apache
-        `ip a`
-        - Abra o Chrome e conecte-se ao IP
-        - Altere o conteúdo do index.html ou o exclua. Ele está no diretório
-        `cd /var/www/html`
-        - Para remover use
-        `rm index.html`
-        - E crie um novo
-        `nano index.html`
-        - Este servidor estará apenas habilitado localmente (apenas na sua rede). Para disponibilizar mundialmente, é necessário conectar por meio de um servidor (AWS, por exemplo)
-- Desafio: Infraestrutura como Código (IaC)
-    - Restaurar o snapshot criado anteriormente no virtualbox;
-    - Atualizar o servidor;
-    - Instalar o apache2;
-    - Instalar o unzip;
-    - Baixar a aplicação disponível no endereço
-    - [https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip](https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/mai) no diretório /tmp;
-    - Copiar os arquivos da aplicação no diretório padrão do apache;
-    - Subir arquivo de script para um repositório no GitHub.
-    - `nano start_apache_environment.sh`
-    
-    ```bash
-    #!/bin/bash
-    echo "Atualizando o servidor..."
-    apt-get update -y
-    echo "Instalando as atualizações..."
-    apt-get upgrade -y
-    echo "Instalando apache2..."
-    apt install apache2 -y
-    echo "Instalando unzip..."
-    apt install unzip -y
-    echo "Baixando linux-site-dio do github"
-    wget -P /tmp [https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip](https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/mai)
-    echo "Deszipando o conteúdo"
-    unzip main.zip
-    echo "Copiando para o ambiente do apache"
-    cp -R * /tmp/linux-site-dio-main /var/www/html
-    ```
-    
-- `chmod +x  start_environment_pattern.sh`concede a permissão de execução do arquivo
-- `./start_environment_pattern.sh` executa o arquivo desejado
+    </details>
+</details>
