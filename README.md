@@ -25,8 +25,6 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         x: `ls p*` saída: `pam.d: atd chfn / perl: net`
         Ou seja: traga todos os arquivos e diretório que se iniciem com p e tenham qualquer coisa depois dele.
             
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf992c6e-1b9a-4da1-b8b2-e23b0654e394/Untitled.png)
-            
         - `ls “expressão”?”expressão”` lista os diretórios e seus arquivos que iniciem com a expressão citada, que possuem uma outra letra ou número após a expressão, e contenham outra expressão na sequência. 
         x: `ls p*m` saída: `pam.d: atd chfn`
         Ou seja: traga todos os arquivos que se iniciem com p, tenham qualquer número ou letra no segundo index/elemento e tenham m na sequência
