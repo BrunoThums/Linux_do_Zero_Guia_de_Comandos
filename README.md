@@ -127,8 +127,8 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     - `ls -l` lista todos os arquivos e pastas do diretório atual, incluindo as permissões, tamanho e data de criação
         - Na imagem abaixo tem-se, da esquerda pra direita:
             - Permissões: `lrwxrwxrwx`
-                
-                ![Untitled]([https://s3-us-west-2.amazonaws.com/secure.notion-static.com/487e096c-b64f-407b-998f-8e6c811fe3ad/Untitled.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/487e096c-b64f-407b-998f-8e6c811fe3ad/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230207%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230207T162324Z&X-Amz-Expires=86400&X-Amz-Signature=815cf61dd1f77cec38667b2ca0cb5521da1ff5dc84da0c2d83d13fc21de248d7&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject))
+               
+                ![Untitled](https://imgur.com/a/baCfZwF)
                 
                 - A primeira letra informa o que é o arquivo Link `l` (redirecionamento de diretório) Diretório `d` Arquivo `-`
                 - os 3 conjuntos de letra são as permissões de leitura `r` escrita `w` e execução`x`.
