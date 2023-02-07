@@ -128,7 +128,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - Na imagem abaixo tem-se, da esquerda pra direita:
             - Permissões: `lrwxrwxrwx`
                
-                ![Untitled](https://imgur.com/a/baCfZwF)
+                ![permissao](https://imgur.com/a/baCfZwF)
                 
                 - A primeira letra informa o que é o arquivo Link `l` (redirecionamento de diretório) Diretório `d` Arquivo `-`
                 - os 3 conjuntos de letra são as permissões de leitura `r` escrita `w` e execução`x`.
