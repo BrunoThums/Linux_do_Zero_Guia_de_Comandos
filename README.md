@@ -10,7 +10,8 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `man clear`
     - `hystory` mostra o histórico de comandos (até 1000 comandos)
     - `!!` executa o último comando utilizado
-    <details>
+</details>
+<details>
 <summary> Navegação </summary>
     - `pwd` descubra o diretório em que você está
     - `cd` (change directory) muda o diretório
@@ -25,8 +26,6 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - `ls “expressão”*` lista os diretórios e seus arquivos que iniciem com a expressão citada 
         x: `ls p*` saída: `pam.d: atd chfn / perl: net`
         Ou seja: traga todos os arquivos e diretório que se iniciem com p e tenham qualquer coisa depois dele.
-            
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf992c6e-1b9a-4da1-b8b2-e23b0654e394/Untitled.png)
             
         - `ls “expressão”?”expressão”` lista os diretórios e seus arquivos que iniciem com a expressão citada, que possuem uma outra letra ou número após a expressão, e contenham outra expressão na sequência. 
         x: `ls p*m` saída: `pam.d: atd chfn`
@@ -355,5 +354,4 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     
     - `chmod +x  start_environment_pattern.sh`concede a permissão de execução do arquivo
     - `./start_environment_pattern.sh` executa o arquivo desejado
-    </details>
 </details>
