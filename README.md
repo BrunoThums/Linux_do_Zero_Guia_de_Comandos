@@ -2,7 +2,7 @@
 DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comandos do curso e suas utilidades
 ---
 
-- Comandos essenciais
+<summary> Comandos essenciais </summary>
     - `comando --help` informa o que faz o comando e informa todos os argumentos utilizáveis, junto com suas funções
     x: `ls --help` 
     x: `help cd`
@@ -10,7 +10,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `man clear`
     - `hystory` mostra o histórico de comandos (até 1000 comandos)
     - `!!` executa o último comando utilizado
-- Navegação
+<summary> Navegação </summary>
     - `pwd` descubra o diretório em que você está
     - `cd` (change directory) muda o diretório
         - `cd ..` retrocede uma pasta
@@ -30,7 +30,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - `ls “expressão”?”expressão”` lista os diretórios e seus arquivos que iniciem com a expressão citada, que possuem uma outra letra ou número após a expressão, e contenham outra expressão na sequência. 
         x: `ls p*m` saída: `pam.d: atd chfn`
         Ou seja: traga todos os arquivos que se iniciem com p, tenham qualquer número ou letra no segundo index/elemento e tenham m na sequência
-- Gerenciar arquivos e pastas
+<summary> Gerenciar arquivos e pastas </summary>
     - CRUD (create, read, update e delete)
         - `touch nomeDoArquivo.formato` cria um arquivo no diretório local 
         x: `touch arquivo.txt`
@@ -47,7 +47,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
             x: `rmdir contatos documentos` (é necessário estar na pasta superior, ou informar o caminho completo das pastas)
         - `rm -rf nomeDodiretório/nomeDaPasta` (recursive forced) exclui todas as subpastas e subarquivos do diretório/pasta informado
         x: `rm -rf documentos` (é necessário estar na pasta superior, ou informar o caminho completo da pasta/diretório)
-    - Copiar/Mover/Renomear/Procurar
+    <summary> Copiar/Mover/Renomear/Procurar </summary>
         - `find -name expressão` procura, a partir do diretório atual, pelo nome do arquivo especificado
         x: `find -name arquivo.txt` ou `find -name arq*`
         - Copiar 1 arquivo:
@@ -69,8 +69,8 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - Renomear um arquivo
             - `mv nomeDoArquivo.extensão nomeDesejado.extensão`
             x: `mv planilhas.xlsx planilha_investimento.xlsx`
-- Gerenciar usuários e grupos
-    - Usuário
+<summary> Gerenciar usuários e grupos <summary>
+    <summary> Usuário </summary>
         - `cat /etc/passwd` mostra a listagem de serviços e usuários
         - `useradd nomeDoUsuario` adiciona um usuário
         `useradd nomeDoUsuario -m` adiciona um usuário e cria seu diretório particular dentro de `/home`
@@ -86,13 +86,13 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - `w` como root, lista os usuários, juntamente com IP, horário de login, tempo em espera (idle)
         - `who -a` lista os usuários e seus PIDs (processo de logon)
         - `kill pidUsuario` “derruba” a sessão de um usuário
-    - Grupo
+    <summary> Grupo </summary>
         - `cat /etc/group` lista os grupos
         - `usermod -G grupo1, grupo2 nomeDoUsuario` adiciona o usuário aos 2 grupos mencionados, removendo-o de outros grupos anteriores (-G groups, para adicionar apenas a um grupo, use -g e o grupo desejado)
         x: `usermod -G adm, sudo mariana` adiciona a mariana ao grupo adm e sudo, removendo-a aos grupos anteriores
         - `gpasswd -d nomeDoUsuario nomeDoGrupo` remove o usuário do grupo citado (-d delete)
         x: `gpasswd -d mariana adm` remove a mariana do grupo “adm”
-- Gerenciar scripts
+<summary> Gerenciar scripts </summary>
     - Crie um arquivo executável `nano criar_user.sh`
     - Crie 4 usuários `useradd guest10`
         - Com o comentário “Usuário convidado” `-c “Usuário convidado”`
@@ -123,10 +123,10 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `chmod +x criar_user.sh`
     - `./nomeDoArquivo.extensão` executa o arquivo desejado
     x: `./criar_user.sh`
-- Permissões
+<summary> Permissões </summary>
     - `ls -l` lista todos os arquivos e pastas do diretório atual, incluindo as permissões, tamanho e data de criação
         - Na imagem abaixo tem-se, da esquerda pra direita:
-            - Permissões: `lrwxrwxrwx`
+            <summary> Permissões: `lrwxrwxrwx`</summary>
                 
                 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/487e096c-b64f-407b-998f-8e6c811fe3ad/Untitled.png)
                 
