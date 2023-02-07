@@ -139,7 +139,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
             - Data e hora criada
             - Nome do Arquivo/Diretório/Links
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16c6cc18-c2e2-4f7c-b547-c8d31e5767d1/Untitled.png)
+        ![ls-l](https://i.imgur.com/EJV0ntl.png)
         
     - `chown nomeDoUsuario:nomeDoGrupo /nomeDoDiretorio` troca o dono do diretório para o usuário e grupo citados (chown = change owner. Só é possível com sudo ou root)
     x: `chown debora:GRP_ADM /adm/`
@@ -147,7 +147,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `chown root:GRP_ADM texto-adm.txt`
     - Nível de permissões: conforme a tabela abaixo, se você quer ter privilégio de Leitura (R) e Gravação (W), terá que informar o valor 6. Se quiser ter R W e X, valor 7. Apenas X? 1. W e X? 3. Nenhuma? 0.
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e23524c7-8d52-4180-9a98-0f47e22f7fc8/Untitled.png)
+        ![tabela](https://i.imgur.com/Y4nz6ry.png)
         
     - Sigla `ndp`: nível de permissão (para ficar mais curto o código abaixo)
     - `chmod **ndpROOTndpGROUPndpOTHER** /diretorio` concede privilégios específicos para o root, grupo e outros para um diretório específico
@@ -212,7 +212,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `killall chrome`
 - Desafio: Infraestrutura como Código (IaC)
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f47ed13d-e3a5-424c-bea3-a747b4effceb/Untitled.png)
+    ![Desafio](https://i.imgur.com/LW7wzVx.png)
     
     - Todo provisionamento deve ser feito em um arquivo do tipo Bash Script;
         - `nano script.sh`
@@ -375,7 +375,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         `cat /etc/passwd`
         - É possível acessar conectando-se a um local de rede
             
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1b2da338-c739-4cf6-bd20-32d552af019b/Untitled.png)
+            ![mapear unidade de rede](https://i.imgur.com/Xk3opkT.png)
             
     - Servidor Web
         - Instale o apache2
@@ -398,7 +398,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     - Instalar o apache2;
     - Instalar o unzip;
     - Baixar a aplicação disponível no endereço
-    - [https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip](https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/mai) no diretório /tmp;
+    - [https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip](https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip) no diretório /tmp;
     - Copiar os arquivos da aplicação no diretório padrão do apache;
     - Subir arquivo de script para um repositório no GitHub.
     - `nano start_apache_environment.sh`
