@@ -2,7 +2,7 @@
 DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comandos do curso e suas utilidades
 ---
 
-- Comandos essenciais
+# Comandos essenciais
     - `comando --help` informa o que faz o comando e informa todos os argumentos utilizáveis, junto com suas funções
     x: `ls --help` 
     x: `help cd`
@@ -10,7 +10,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `man clear`
     - `hystory` mostra o histórico de comandos (até 1000 comandos)
     - `!!` executa o último comando utilizado
-- Navegação
+# Navegação
     - `pwd` descubra o diretório em que você está
     - `cd` (change directory) muda o diretório
         - `cd ..` retrocede uma pasta
@@ -28,7 +28,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - `ls “expressão”?”expressão”` lista os diretórios e seus arquivos que iniciem com a expressão citada, que possuem uma outra letra ou número após a expressão, e contenham outra expressão na sequência. 
         x: `ls p*m` saída: `pam.d: atd chfn`
         Ou seja: traga todos os arquivos que se iniciem com p, tenham qualquer número ou letra no segundo index/elemento e tenham m na sequência
-- Gerenciar arquivos e pastas
+# Gerenciar arquivos e pastas
     - CRUD (create, read, update e delete)
         - `touch nomeDoArquivo.formato` cria um arquivo no diretório local 
         x: `touch arquivo.txt`
@@ -67,7 +67,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - Renomear um arquivo
             - `mv nomeDoArquivo.extensão nomeDesejado.extensão`
             x: `mv planilhas.xlsx planilha_investimento.xlsx`
-- Gerenciar usuários e grupos
+# Gerenciar usuários e grupos
     - Usuário
         - `cat /etc/passwd` mostra a listagem de serviços e usuários
         - `useradd nomeDoUsuario` adiciona um usuário
@@ -90,7 +90,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         x: `usermod -G adm, sudo mariana` adiciona a mariana ao grupo adm e sudo, removendo-a aos grupos anteriores
         - `gpasswd -d nomeDoUsuario nomeDoGrupo` remove o usuário do grupo citado (-d delete)
         x: `gpasswd -d mariana adm` remove a mariana do grupo “adm”
-- Gerenciar scripts
+# Gerenciar scripts
     - Crie um arquivo executável `nano criar_user.sh`
     - Crie 4 usuários `useradd guest10`
         - Com o comentário “Usuário convidado” `-c “Usuário convidado”`
@@ -121,7 +121,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `chmod +x criar_user.sh`
     - `./nomeDoArquivo.extensão` executa o arquivo desejado
     x: `./criar_user.sh`
-- Permissões
+# Permissões
     - `ls -l` lista todos os arquivos e pastas do diretório atual, incluindo as permissões, tamanho e data de criação
         - Na imagem abaixo tem-se, da esquerda pra direita:
             - Permissões: `lrwxrwxrwx`
@@ -156,7 +156,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `chmod +x criar_user.sh`
     - `chmod -x  nomeDoArquivo.extensão` remove a permissão de execução do arquivo para o dono
     x: `chmod -x criar_user.sh`
-- Gerenciar pacotes
+# Gerenciar pacotes
     - `apt list installed` lista os aplicativos instalados na máquina
     - `apt list --upgradable` lista os aplicativos instalados que possuem atualização disponível
     - `apt search nomeDoAplicativo` procura aplicativos nos repositórios do ubuntu com o nome citado
@@ -172,7 +172,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     - `apt update` faz o download da atualização dos pacotes do sistema
     - `apt upgrade` faz a instalação das atualizações dos pacotes do sistema
     - 
-- Gerenciar discos
+# Gerenciar discos
     - Particionar o disco
         - Escolha o disco desejado ( ex: `/dev/sdb` )
         - `fdisk caminhoDoDisco` abre o fdisk para o disco escolhido
@@ -199,7 +199,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     `nomeDodisco + localMontado + formatoDoSistemaDeArquivos + parâmetrosPadrões`
     x: `/dev/sdb /disk2 etx4 defaults 0 0` salve com CTRL+O Enter CTRL+X
     - Faça o reboot para confirmar as modificações
-- Gerenciar processos
+# Gerenciar processos
     - `ps` lista os processos do usuário atual
         - `-a` parâmetro indicado para mostrar os processos de todos os usuários
         - `-u` parâmetro indicado para exibir o nome do usuário e horário de início do processo
@@ -208,7 +208,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     x: `kill 12852`
     - `killall nomeDoAplicativo` elimina todos os processos de um determinado processo
     x: `killall chrome`
-- Desafio: Infraestrutura como Código (IaC)
+# Desafio: Infraestrutura como Código (IaC)
     
     ![Desafio](https://i.imgur.com/LW7wzVx.png)
     
@@ -332,7 +332,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
     - `./start_environment_pattern.sh` executa o arquivo desejado
     
 
-- Servidores
+# Servidores
     - São utilizados como: servidor de arquivos, servidor web e servidor de banco de dados.
     - Servidor de arquivos
         - É necessário instalar o samba (para manipular arquivos SMB, do Windows)
@@ -390,7 +390,7 @@ DIO Linux do Zero: guia de comandos. Aqui estão, resumidamente, todos os comand
         - E crie um novo
         `nano index.html`
         - Este servidor estará apenas habilitado localmente (apenas na sua rede). Para disponibilizar mundialmente, é necessário conectar por meio de um servidor (AWS, por exemplo)
-- Desafio: Infraestrutura como Código (IaC)
+# Desafio: Infraestrutura como Código (IaC)
     - Restaurar o snapshot criado anteriormente no virtualbox;
     - Atualizar o servidor;
     - Instalar o apache2;
